@@ -540,11 +540,13 @@ if __name__ == "__main__":
     # torch.manual_seed(args.seed)
     # random.seed(args.seed)
     # np.random.seed(args.seed)
-
     name = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")+"_%s" % args.comment.replace('/', '_') + \
-           "_Seed{}_Bs{}_lr{}_BagLength{}_PosPatchRatio{}_PLPostProcessBy{}_StuFilterType{}_smoothE{}_weightN{}".format(
-               args.seed, args.batch_size, args.lr, args.bag_length, args.pos_patch_ratio,
-               args.PLPostProcessMethod, args.StuFilterType, args.smoothE, args.stu_loss_weight_neg)
+           "_Seed{}_Bs{}".format( args.seed, args.batch_size)
+    
+    # name = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")+"_%s" % args.comment.replace('/', '_') + \
+    #        "_Seed{}_Bs{}_lr{}_BagLength{}_PosPatchRatio{}_PLPostProcessBy{}_StuFilterType{}_smoothE{}_weightN{}".format(
+    #            args.seed, args.batch_size, args.lr, args.bag_length, args.pos_patch_ratio,
+    #            args.PLPostProcessMethod, args.StuFilterType, args.smoothE, args.stu_loss_weight_neg)
     try:
         args.device = [int(item) for item in args.device.split(',')]
     except AttributeError:

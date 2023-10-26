@@ -8,7 +8,8 @@ from torchvision import datasets, transforms
 from PIL import Image
 
 import numpy as np
-from six.moves import cPickle as pickle
+import pickle #replaces below line
+#from six.moves import cPickle as pickle
 import os
 import platform
 classes = ('plane', 'car', 'bird', 'cat',
@@ -29,6 +30,8 @@ def load_pickle(f):
 
 def load_CIFAR_batch(filename):
     """ load single batch of cifar """
+    #path = "C:/Users/kylie/OneDrive - University of Wisconsin-La Crosse/23 - 24 Junior Year/Research/WENO/cifar-10-batches-py"
+    #path = path + "/" + filename
     with open(filename, 'rb') as f:
         datadict = load_pickle(f)
         X = datadict['data']
